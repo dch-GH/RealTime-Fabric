@@ -1,7 +1,7 @@
 package realtimefabric;
 
 import net.fabricmc.fabric.api.entity.event.v1.EntitySleepEvents;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import realtimefabric.commands.ForceSyncTimeCommand;
 import realtimefabric.commands.ToggleRtCommand;
 import realtimefabric.listeners.*;
@@ -28,7 +28,9 @@ public class RealTimeMod implements ModInitializer {
             
         ServerTickEvents.START_SERVER_TICK.register(tickListener);
         ServerWorldEvents.LOAD.register(new RealTimeServerWorldLoadListener());
+        ServerLifecycleEvents.SERVER_STOPPING.register(new ServerStoppingListener());
         EntitySleepEvents.ALLOW_SLEEPING.register(new BedListener());
+
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
 			ForceSyncTimeCommand.register(dispatcher);
             ToggleRtCommand.register(dispatcher);

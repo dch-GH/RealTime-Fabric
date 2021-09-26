@@ -1,12 +1,13 @@
 package realtimefabric.listeners;
 
 import net.fabricmc.fabric.api.entity.event.v1.EntitySleepEvents;
+import net.minecraft.entity.mob.PhantomEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.text.*;
 
-import net.minecraft.world.World;
+import net.minecraft.world.gen.PhantomSpawner;
 import org.jetbrains.annotations.Nullable;
 import realtimefabric.ModConfig;
 
