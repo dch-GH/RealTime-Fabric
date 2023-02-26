@@ -11,7 +11,7 @@ import realtimefabric.RealTimeMod;
 
 public class ToggleRtCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(CommandManager.literal("togglert").executes(ctx -> {
+        dispatcher.register(CommandManager.literal("rttoggle").executes(ctx -> {
             ModConfig.Enabled = !ModConfig.Enabled;
             Text status = ModConfig.Enabled ?
                     MutableText.of(TextContent.EMPTY).append("ENABLED").setStyle(Style.EMPTY.withColor(Formatting.GREEN))

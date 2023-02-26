@@ -1,25 +1,14 @@
 package realtimefabric.listeners;
 
-import net.fabricmc.fabric.api.entity.event.v1.EntitySleepEvents;
-import net.minecraft.entity.mob.PhantomEntity;
+import net.fabricmc.fabric.api.entity.event.v1.EntitySleepEvents.AllowResettingTime;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.text.*;
-
-import org.jetbrains.annotations.Nullable;
 import realtimefabric.ModConfig;
 
-public class BedListener implements EntitySleepEvents.AllowSleeping {
-
-    @Override
-    public PlayerEntity.@Nullable SleepFailureReason allowSleep(PlayerEntity player, BlockPos sleepingPos) {
-        if (ModConfig.Enabled && !player.getEntityWorld().isClient) {
-            player.sendMessage(MutableText.of(new TranslatableTextContent("realtimefabric.cannot.sleep")));
-            return PlayerEntity.SleepFailureReason.NOT_POSSIBLE_NOW;
-        } else {
-            return null;
-        }
-
-    }
+public class BedListener implements AllowResettingTime {
+	@Override
+	public boolean allowResettingTime(PlayerEntity player) {
+	// Disallow time resetting while the mod is enabled.
+	// This still sets the Time Since Last Rest stat, so insomnia won't occur!
+		return !ModConfig.Enabled;
+	}
 }

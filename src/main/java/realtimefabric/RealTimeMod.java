@@ -31,7 +31,7 @@ public class RealTimeMod implements ModInitializer {
         ServerTickEvents.START_SERVER_TICK.register(tickListener);
         ServerWorldEvents.LOAD.register(new RealTimeServerWorldLoadListener());
         ServerLifecycleEvents.SERVER_STOPPING.register(new ServerStoppingListener());
-        EntitySleepEvents.ALLOW_SLEEPING.register(new BedListener());
+        EntitySleepEvents.ALLOW_RESETTING_TIME.register(new BedListener());
 
 		net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback.EVENT.register((dispatcher, reg, env) -> {
 			ForceSyncTimeCommand.register(dispatcher);

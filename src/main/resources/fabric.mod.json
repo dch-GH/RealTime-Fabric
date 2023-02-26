@@ -3,14 +3,14 @@
   "id": "realtimefabric",
   "version": "1.0.1",
   "name": "RealTime Fabric",
-  "description": "A fabric port of the minecraft forge mod of the same name.",
+  "description": "A fabric port of the minecraft forge mod of the same name. Syncs in-game world time with your computer clock time.",
   "authors": [
     "akymos",
     "Jays (porter)"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/realtime-mod",
-    "sources": "https://github.com/akymos/RealTimeMod"
+    "sources": "https://github.com/akymos/RealTimeMod, https://github.com/Ephememory/RealTime-Fabric"
   },
   "license": "CC0-1.0",
   "icon": "assets/realtimefabric/icon.png",
