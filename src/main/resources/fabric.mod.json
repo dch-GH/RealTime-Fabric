@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "realtimefabric",
   "version": "1.0.1",
-
   "name": "RealTime Fabric",
   "description": "A fabric port of the minecraft forge mod of the same name.",
   "authors": [
@@ -13,24 +12,20 @@
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/realtime-mod",
     "sources": "https://github.com/akymos/RealTimeMod"
   },
-
   "license": "CC0-1.0",
   "icon": "assets/realtimefabric/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
       "realtimefabric.RealTimeMod"
     ]
   },
-  "mixins": [
-  ],
-
+  "mixins": [],
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "fabric": "*",
-    "minecraft": "1.17.x",
-    "java": ">=16"
+    "fabricloader": ">=0.14.14",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
   },
   "suggests": {
     "another-mod": "*"
